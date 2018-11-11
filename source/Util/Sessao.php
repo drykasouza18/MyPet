@@ -12,28 +12,28 @@ class Sessao {
     }
 
     function add($chave, $valor) {
-        $_SESSION['ppi2'][$chave] = $valor;
+        $_SESSION['mypet'][$chave] = $valor;
     }
 
     function get($chave) {
-        if (isset($_SESSION['ppi2'][$chave]))
-            return $_SESSION['ppi2'][$chave];
+        if (isset($_SESSION['mypet'][$chave]))
+            return $_SESSION['mypet'][$chave];
         return '';
     }
 
     function rem($chave) {
-        if (isset($_SESSION['ppi2'][$chave]))
-            session_unset($_SESSION['ppi2'][$chave]);
+        if (isset($_SESSION['mypet'][$chave]))
+            session_unset($_SESSION['mypet'][$chave]);
     }
 
     function del() {
-        if (isset($_SESSION['ppi2']))
-            session_unset($_SESSION['ppi2']);
+        if (isset($_SESSION['mypet']))
+            session_unset($_SESSION['mypet']);
         session_destroy();
     }
 
     function existe($chave) {
-        if (isset($_SESSION['ppi2'][$chave]))
+        if (isset($_SESSION['mypet'][$chave]))
             return true;
         return false;
     }

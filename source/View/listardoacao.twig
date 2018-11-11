@@ -25,14 +25,12 @@
 
     <body id="page-top">
         {% block conteudo %}
-            {{ include('Componentes/menu.twig') }}
+            {{ include('Componentes/menulogado.twig') }}
             <!-- Header -->
             <header class="masthead">
                 <div class="container">
-                    <div class="intro-text">
-                        <div class="intro-lead-in">Bem Vindo ao My Pet!</div>
-                        <div class="intro-heading text-uppercase">Prazer em conhecê -lo</div>
-                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/formcadastro">Cadastrar-se</a>
+                    <div class="intro-text" id="listar">
+                        
                     </div>
                 </div>
             </header>

@@ -32,4 +32,26 @@ $rotas->add('paginalogin', new Route('/formlogin/{suffix}',
 $rotas->add('login', new Route('/login',
         array('_controller' => 'MyPet\Controller\ControllerLogin',
             "method" => 'efetuarLogin', 'suffix' => '')));
+
+$rotas->add('paginainiciall', new Route('/indexl',
+        array('_controller' => 'MyPet\Controller\ControllerLogado',
+            "method" => 'showPaginaInicialL', 'suffix' => '')));
+
+$rotas->add('mostrardoacoes', new Route('/listaradotar',
+        array('_controller' => 'MyPet\Controller\ControllerLogado',
+            "method" => 'showPaginaListaDoacao', 'suffix' => '')));
+
+$rotas->add('formulariodoacao', new Route('/formdoar',
+        array('_controller' => 'MyPet\Controller\ControllerLogado',
+            "method" => 'showPaginaDoar', 'suffix' => '')));
+
+
+$rotas->add('formulariodoacao', new Route('/doar',
+        array('_controller' => 'MyPet\Controller\ControllerLogado',
+            "method" => 'cadastrarDoacao', 'suffix' => '')));
+
+
+$rotas->add('mostrardoaco', new Route('/logout',
+        array('_controller' => 'MyPet\Controller\ControllerLogin',
+            "method" => 'efetuarLogout', 'suffix' => '')));
 return $rotas;

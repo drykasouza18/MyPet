@@ -22,6 +22,8 @@ use MyPet\Util\Sessao;
        return $this->response->setContent($this->twig->render('index.twig'));
     }
     
+    
+    
 
     public function showPaginaCadastro() {
         return $this->response->setContent($this->twig->render('cadastrarNoSistema.twig'));

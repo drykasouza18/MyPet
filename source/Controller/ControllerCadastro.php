@@ -76,7 +76,7 @@ class ControllerCadastro {
                                                     $usuario = new Usuario($nome, $cpf, $login, $senha, $email, 
                                                             $rua, $numero, $bairro, $cep, $cidade, $estado);
                                                     $modeloUsuario = new ModeloUsuario();
-                                                    if ($id = $modeloUsuario>cadastrarContato($usuario)) {
+                                                    if ($id = $modeloUsuario->cadastrarUsuario($usuario)) {
                                                         echo 'Cadastro efetuado com sucesso.Código: ' . $id;
                                                     } else {
                                                         echo 'Falha ao cadastrar..';
