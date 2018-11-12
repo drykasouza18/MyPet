@@ -22,9 +22,9 @@ class ControllerLogado {
     }
 
     
-    public function showPaginaListaDoacao() {
+    public function showPaginaListaAdotar() {
         if ($this->sessao->existe('E-mail')) {
-            return $this->response->setContent($this->twig->render('listardoacao.twig'));
+            return $this->response->setContent($this->twig->render('listaradotar.twig'));
         } else {
             $destino = '/formlogin';
             $redirecionar = new RedirectResponse($destino);
@@ -43,7 +43,7 @@ class ControllerLogado {
     }
     public function showPaginaDoar() {
         if ($this->sessao->existe('E-mail')) {
-            return $this->response->setContent($this->twig->render('doar.twig'));
+            return $this->response->setContent($this->twig->render('formularioparadoar.twig'));
         } else {
             $destino = '/formlogin';
             $redirecionar = new RedirectResponse($destino);

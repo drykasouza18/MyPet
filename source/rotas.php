@@ -37,17 +37,18 @@ $rotas->add('paginainiciall', new Route('/indexl',
         array('_controller' => 'MyPet\Controller\ControllerLogado',
             "method" => 'showPaginaInicialL', 'suffix' => '')));
 
-$rotas->add('mostrardoacoes', new Route('/listaradotar',
+$rotas->add('listaradotar', new Route('/listaradotar',
         array('_controller' => 'MyPet\Controller\ControllerLogado',
-            "method" => 'showPaginaListaDoacao', 'suffix' => '')));
+            "method" => 'showPaginaListaAdotar', 'suffix' => '')));
+
 
 $rotas->add('formulariodoacao', new Route('/formdoar',
         array('_controller' => 'MyPet\Controller\ControllerLogado',
             "method" => 'showPaginaDoar', 'suffix' => '')));
 
 
-$rotas->add('formulariodoacao', new Route('/doar',
-        array('_controller' => 'MyPet\Controller\ControllerLogado',
+$rotas->add('inserirdoacao', new Route('/doar',
+        array('_controller' => 'MyPet\Controller\ControllerDoacao',
             "method" => 'cadastrarDoacao', 'suffix' => '')));
 
 
