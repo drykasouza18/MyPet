@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Pet - Contato</title>
+        <title>My Pet - Doar Mascote</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,7 +19,7 @@
     </head>
     <body id="page-top">
         {% block conteudo %}
-            {{ include('Componentes/menu.twig') }}
+            {{ include('Componentes/menulogado.twig') }}
 
             <header class="masthead">
                 <div class="container">
@@ -28,15 +28,14 @@
                     <br/>
                     <br/>
                     <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <form  class="form-group center-block text-center" id="formAdotar" enctype="multipart/form-data">
+                    <form  class="form-group center-block text-center" id="formDoar" enctype="multipart/form-data">
                         <label class="intro-heading text-uppercase">Informações do Mascote</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nome: </span>
+                            </div>
+                            <input type="text" name="nome_mascote" id="nome_mascote" class="form-control"/>
+                        </div>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Idade: </span>
@@ -79,7 +78,7 @@
                                 <span class="input-group-text">Adoção Especial? </span>
 
                             </div>
-                            <select id="adocao" name="adocao">
+                            <select id="adocaoespecial" name="adocaoespecial">
                                 <option value="Sim">Sim</option>
                                 <option value="Nao">Não</option>
                             </select>
@@ -89,9 +88,11 @@
                                 <span class="input-group-text">História: </span>
 
                             </div>
-                            <input type="text" name="historia" id="historia" class="form-control"/>
+                            <textarea rows="10" cols="40" name="historia" id="historia" class="form-control">
+                            </textarea>
                         </div>
-                         <label class="intro-heading text-uppercase">Informações do Doador</label>
+                        <br/><br/>
+                        <label class="intro-heading text-uppercase">Informações do Doador</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Nome Doador: </span>
@@ -104,16 +105,19 @@
                                 <span class="input-group-text">E-mail: </span>
 
                             </div>
-                            <input type="email" name="email" id="email" class="form-control"/>
+                            <input type="emaildoador" name="emaildoador" id="email" class="form-control"/>
                         </div>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Telefone: </span>
 
                             </div>
-                            <input type="text" name="telefone" id="telefone" class="form-control"/>
+                            <input type="text" name="telefonedoador" id="telefonedoador" class="form-control"/>
                         </div>
-                        
+                        <br/>
+                        <div class="input-group">
+                            <input type="file" name="imagem"/>
+                        </div>
                         <div class="">  
                             <button type="submit" class="btn btn-success">Cadastrar</button>
                         </div>

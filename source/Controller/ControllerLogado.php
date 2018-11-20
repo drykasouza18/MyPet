@@ -24,7 +24,7 @@ class ControllerLogado {
     
     public function showPaginaListaAdotar() {
         if ($this->sessao->existe('E-mail')) {
-            return $this->response->setContent($this->twig->render('listaradotar.twig'));
+            return $this->response->setContent($this->twig->render('listaparaadotar.twig'));
         } else {
             $destino = '/formlogin';
             $redirecionar = new RedirectResponse($destino);

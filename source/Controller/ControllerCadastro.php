@@ -23,9 +23,6 @@ class ControllerCadastro {
         $this->sessao = $sessao;
     }
 
-    public function showPaginaCadastro() {
-        return $this->response->setContent($this->twig->render('cadastrarNoSistema.twig'));
-    }
 
     public function InserirUsuario() {
         $nome = $this->request->get('nome');
@@ -42,55 +39,55 @@ class ControllerCadastro {
 
         if (empty($nome)) {
             echo 'Nome está vazio!';
+            return;
+        }
+
+        if (empty($cpf)) {
+            echo'C.P.F. está vazio!';
+            return;
+        }
+        if (empty($login)) {
+            echo'Mensagem está vazio!';
+            return;
+        }
+        if (empty($senha)) {
+            echo 'Senha está vazio!';
+            return;
+        }
+        if (empty($email)) {
+            echo 'E-mail está vazio!';
+            return;
+        }
+        if (empty($rua)) {
+            echo 'Rua está vazio!';
+            return;
+        }
+        if (empty($numero)) {
+            echo 'Número está vazio!';
+            return;
+        }
+        if (empty($bairro)) {
+            echo 'Bairro está vazio!';
+            return;
+        }
+        if (empty($cep)) {
+            echo 'C.E.P está vazio!';
+            return;
+        }
+        if (empty($cidade)) {
+            echo'Cidade está vazio!';
+            return;
+        }
+        if (empty($estado)) {
+            echo 'Estado está vazio!';
+            return;
+        }
+        $usuario = new Usuario($nome, $cpf, $login, $senha, $email, $rua, $numero, $bairro, $cep, $cidade, $estado);
+        $modeloUsuario = new ModeloUsuario();
+        if ($id = $modeloUsuario->cadastrarUsuario($usuario)) {
+            echo 'Cadastro efetuado com sucesso. Código: ' . $id;
         } else {
-            if (empty($cpf)) {
-                echo'C.P.F. está vazio!';
-            } else {
-                if (empty($login)) {
-                    echo'Mensagem está vazio!';
-                } else {
-                    if (empty($senha)) {
-                        echo 'Senha está vazio!';
-                    } else {
-                        if (empty($email)) {
-                            echo 'E-mail está vazio!';
-                        } else {
-                            if (empty($rua)) {
-                                echo 'Rua está vazio!';
-                            } else {
-                                if (empty($numero)) {
-                                    echo 'Número está vazio!';
-                                } else {
-                                    if (empty($bairro)) {
-                                        echo 'Bairro está vazio!';
-                                    } else {
-                                        if (empty($cep)) {
-                                            echo 'C.E.P está vazio!';
-                                        } else {
-                                            if (empty($cidade)) {
-                                                echo'Cidade está vazio!';
-                                            } else {
-                                                if (empty($estado)) {
-                                                    echo 'Estado está vazio!';
-                                                } else {
-                                                    $usuario = new Usuario($nome, $cpf, $login, $senha, $email, 
-                                                            $rua, $numero, $bairro, $cep, $cidade, $estado);
-                                                    $modeloUsuario = new ModeloUsuario();
-                                                    if ($id = $modeloUsuario->cadastrarUsuario($usuario)) {
-                                                        echo 'Cadastro efetuado com sucesso.Código: ' . $id;
-                                                    } else {
-                                                        echo 'Falha ao cadastrar..';
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            echo 'Falha ao cadastrar!';
         }
     }
 

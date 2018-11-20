@@ -19,7 +19,7 @@ $rotas->add('contato', new Route('/contato',
             "method" => 'InserirContato', 'suffix' => '')));
 
 $rotas->add('paginacadastro', new Route('/formcadastro/{suffix}',
-        array('_controller' => 'MyPet\Controller\ControllerCadastro',
+        array('_controller' => 'MyPet\Controller\ControllerShowView',
             "method" => 'showPaginaCadastro', 'suffix' => '')));
 
 $rotas->add('cadastro', new Route('/cadastro',
@@ -40,6 +40,10 @@ $rotas->add('paginainiciall', new Route('/indexl',
 $rotas->add('listaradotar', new Route('/listaradotar',
         array('_controller' => 'MyPet\Controller\ControllerLogado',
             "method" => 'showPaginaListaAdotar', 'suffix' => '')));
+
+$rotas->add('lista', new Route('/listamascotes',
+        array('_controller' => 'MyPet\Controller\ControllerDoacao',
+            "method" => 'listarMascoteDoacao', 'suffix' => '')));
 
 
 $rotas->add('formulariodoacao', new Route('/formdoar',
