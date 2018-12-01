@@ -30,17 +30,7 @@
             <header class="masthead">
                 <div class="container">
                     <div class="intro-text">
-                        {% for i in dados %}
-                            <a href="/detalhemascoteparaadotar/{{i.idDoacao}}" style="font-style: normal">                                         
-                                <div id="imagem">  
-                                    <img src="imagens/{{i.idDoacao~".jpg"}}" 
-                                         style="height: 200px; width: 200px;"/>
-                                    Nome Mascote: {{i.nomeanimal}}
-                                    <button type="submit" class="btn btn-success" id="id">Adotar</button>
-                                </div>
-                            </a>
-                            <br/>
-                        {% endfor %} 
+                        Não há animais para adoção.
 
                     </div>
                 </div>

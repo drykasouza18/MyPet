@@ -4,6 +4,7 @@ namespace MyPet\Modelos;
 
 use MyPet\Entidades\Usuario;
 use MyPet\Util\Conexao;
+use PDO;
 
 class ModeloUsuario {
 
@@ -13,14 +14,14 @@ class ModeloUsuario {
 
     public function cadastrarUsuario(Usuario $usuario) {
         try {
-            $sql = 'insert into usuario (nome, cpf, login, senha, email, rua, numero,'
+            $sql = 'insert into usuario (nome, cpf, identidade, senha, email, rua, numero,'
                     . 'bairro, cep, cidade, estado) '
-                    . 'values(:nome, :cpf, :login, :senha, :email, :rua, :numero,'
+                    . 'values(:nome, :cpf, :identidade, :senha, :email, :rua, :numero,'
                     . ':bairro, :cep, :cidade, :estado)';
             $p_sql = Conexao::getInstancia()->prepare($sql);
             $p_sql->bindValue(':nome', $usuario->getNome());
             $p_sql->bindValue(':cpf', $usuario->getCpf());
-            $p_sql->bindValue(':login', $usuario->getLogin());
+            $p_sql->bindValue(':identidade', $usuario->getIdentidade());
             $p_sql->bindValue(':senha', $usuario->getSenha());
             $p_sql->bindValue(':email', $usuario->getEmail());
             $p_sql->bindValue(':rua', $usuario->getRua());
@@ -54,4 +55,60 @@ class ModeloUsuario {
         }
     }
 
+    public function buscaID($email) {
+        try {
+            $sql = 'select idUsuario from usuario '
+                    . 'where (email = :email)';
+            $p_sql = Conexao::getInstancia()->prepare($sql);
+            $p_sql->bindValue(':email', $email);
+            $p_sql->execute();
+            $p_sql->setFetchMode(PDO::FETCH_CLASS, 'idUsuario');
+            return $p_sql->fetch();
+        } catch (Exception $ex) {
+            return 'deu erro na conexão:' . $ex;
+        }
+    }
+
+    public function buscaEmail($email) {
+        try {
+            $sql = 'select * from usuario where (email = :email)';
+            $p_sql = Conexao::getInstancia()->prepare($sql);
+            $p_sql->bindValue(':email', $email);
+            if ($p_sql->execute()) {
+                return $count = $p_sql->rowCount();
+            }
+            return null;
+        } catch (Exception $ex) {
+            
+        }
+    }
+
+    public function buscaCpf($cpf) {
+        try {
+            $sql = 'select * from usuario where (cpf = :cpf)';
+            $p_sql = Conexao::getInstancia()->prepare($sql);
+            $p_sql->bindValue(':cpf', $cpf);
+            if ($p_sql->execute()) {
+                return $count = $p_sql->rowCount();
+            }
+            return null;
+        } catch (Exception $ex) {
+            
+        }
+    }
+
+    public function buscaIDListagem($email) {
+        try {
+            $sql = 'select idUsuario from usuario where (email = :email)';
+            $p_sql = Conexao::getInstancia()->prepare($sql);
+            $p_sql->bindValue(':email', $email);
+            $p_sql->execute();
+            $p_sql->setFetchMode(PDO::FETCH_CLASS, 'idusuario');
+            return $p_sql->fetch();
+        } catch (Exception $ex) {
+            
+        }
+    }
+
+    
 }

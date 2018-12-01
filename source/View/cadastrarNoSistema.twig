@@ -44,15 +44,15 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">C.P.F.: </span>
                             </div>
-                            <input type="number" name = "cpf" id="cpf"
-                                   class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00"/>
+                            <input type="text" name="cpf" id="cpf" 
+                                   maxlength="14" class="form-control" >
                         </div>
                         <br/>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Login: </span>
+                                <span class="input-group-text">Identidade: </span>
                             </div>
-                            <input type="text" name="login" id="login" class="form-control"/>
+                            <input type="text" name="identidade" id="identidade" class="form-control"/>
                         </div>
                         <br/>
                         <div class="input-group">
@@ -102,6 +102,7 @@
                                 <span class="input-group-text">Estado: </span>
                             </div>
                             <select id="estado" name="estado">
+                                <option> -------------------------- Selecione o Estado ----------- </option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -137,13 +138,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Cidade: </span>
                             </div>
-                           <input type="text" name="cidade" id="cidade" class="form-control "/>
+                            <input type="text" name="cidade" id="cidade" class="form-control "/>
                         </div>
                         <br/>
                         <div class="">  
                             <button type="submit" class="btn btn-success">Cadastrar</button>
                         </div>
-
                     </form>
 
                     <div id="div_retorno">
@@ -209,6 +209,7 @@
             <!-- Bootstrap core JavaScript -->
 
             <script src="js/funcoes.js" type="text/javascript" ></script>
+            <script src="js/formatacao.js" type="text/javascript" ></script>
             <script src="js/bootstrap.min.js" type="text/javascript"></script>
             <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
             <!-- Plugin JavaScript -->

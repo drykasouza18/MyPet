@@ -43,10 +43,7 @@ class ControllerLogin {
                 if ($contador >= 1) {
                     $this->sessao->start();
                     $this->sessao->add('E-mail', $email);
-//                    $destino = '/indexl';
-//                    $redirecionar = new RedirectResponse($destino);
-//                    $redirecionar->send();
-////
+
                     ?>
                     <script language= "JavaScript">
                         location.href = "http://www.mypet.org/indexl"

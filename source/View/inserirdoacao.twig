@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Pet - Doar Mascote</title>
+        <title>My Pet - Doar</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,28 +29,72 @@
                     <br/>
                     <br/>
                     <form  class="form-group center-block text-center" id="formDoar" enctype="multipart/form-data">
-                        <label class="intro-heading text-uppercase">Informações do Mascote</label>
+                        <label class="intro-heading text-uppercase">Informações do Animal</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">Nome: </span>
+                                <span class="input-group-text">Nome do Animal: </span>
                             </div>
-                            <input type="text" name="nome_mascote" id="nome_mascote" class="form-control"/>
+                            <input type="text" name="nomeanimal" id="nomeanimal" class="form-control"/>
                         </div>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Idade: </span>
-                            </div>
-                            <input type="text" name="idade" id="idade" class="form-control"/>
-                        </div>
-
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Categoria</span>
                             </div>
                             <select id="categoria" name="categoria">
+                                <option>------- Selecione a categoria --------</option>
                                 <option value="Cachorro">Cachorro</option>
-                                <option value="Gato">Gato</option>
+                                <option value="Gato">Gato</option>                                
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Idade: </span>
+                            </div>
+                            <input type="number" name="idade" id="idade" class="form-control"/>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Sexo: </span>
+                            </div>
+                            <select id="sexo" name="sexo">
+                                <option>------- Selecione o sexo --------</option>
+                                <option value="Fêmea">Fêmea</option>
+                                <option value="Macho">Macho</option>                                
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Raça: </span>
+                            </div>
+                            <input type="text" name="raca" id="raca" class="form-control"/>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Cor da Pelagem: </span>
+                            </div>
+                            <input type="text" name="corpelagem" id="corpelagem" class="form-control"/>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Porte: </span>
+                            </div>
+                            <select id="porte" name="porte">
+                                <option>------- Porte --------</option>
+                                <option value="Mini">Mini</option>
+                                <option value="Pequeno">Pequeno</option>
+                                <option value="Grande">Grande</option>
+                                <option value="Gigante">Gigante</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Castrado? </span>
 
+                            </div>
+                            <select id="castrado" name="castrado">
+                                <option>------- Castrado? --------</option>
+                                <option value="Sim">Sim</option>
+                                <option value="Nao">Não</option>
                             </select>
                         </div>
                         <div class="input-group">
@@ -59,6 +103,7 @@
 
                             </div>
                             <select id="vacinado" name="vacinado">
+                                <option>------- Vacinado? --------</option>
                                 <option value="Sim">Sim</option>
                                 <option value="Nao">Não</option>
                             </select>
@@ -69,6 +114,7 @@
 
                             </div>
                             <select id="vermifugado" name="vermifugado">
+                                <option>------- Vermifugado? --------</option>
                                 <option value="Sim">Sim</option>
                                 <option value="Nao">Não</option>
                             </select>
@@ -79,6 +125,7 @@
 
                             </div>
                             <select id="adocaoespecial" name="adocaoespecial">
+                                <option>------- Adocao Especial? --------</option>
                                 <option value="Sim">Sim</option>
                                 <option value="Nao">Não</option>
                             </select>
@@ -119,7 +166,7 @@
                             <input type="file" name="imagem"/>
                         </div>
                         <div class="">  
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                            <button type="submit" class="btn btn-success">Inserir Doação</button>
                         </div>
 
                     </form>

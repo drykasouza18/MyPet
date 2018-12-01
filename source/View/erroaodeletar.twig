@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>My Pet- Lista de Animais para Doação</title>
+        <title>My Pet- Erro ao Deletar</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,18 +30,8 @@
             <header class="masthead">
                 <div class="container">
                     <div class="intro-text">
-                        {% for i in dados %}
-                            <a href="/detalhemascoteparaadotar/{{i.idDoacao}}" style="font-style: normal">                                         
-                                <div id="imagem">  
-                                    <img src="imagens/{{i.idDoacao~".jpg"}}" 
-                                         style="height: 200px; width: 200px;"/>
-                                    Nome Mascote: {{i.nomeanimal}}
-                                    <button type="submit" class="btn btn-success" id="id">Adotar</button>
-                                </div>
-                            </a>
-                            <br/>
-                        {% endfor %} 
-
+                        <div class="intro-lead-in">Erro ao deletar Doação!</div>
+                      
                     </div>
                 </div>
             </header>

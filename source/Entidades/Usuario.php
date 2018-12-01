@@ -4,7 +4,7 @@ namespace MyPet\Entidades;
 class Usuario {
     private $nome;
     private $cpf;
-    private $login;
+    private $identidade;
     private $senha;
     private $email;
     private $rua;
@@ -14,10 +14,10 @@ class Usuario {
     private $cidade;
     private $estado;
 
-    function __construct($nome, $cpf, $login, $senha, $email, $rua, $numero, $bairro, $cep, $cidade, $estado) {
+    function __construct($nome, $cpf, $identidade, $senha, $email, $rua, $numero, $bairro, $cep, $cidade, $estado) {
         $this->nome = $nome;
         $this->cpf = $cpf;
-        $this->login = $login;
+        $this->identidade = $identidade;
         $this->senha = $senha;
         $this->email = $email;
         $this->rua = $rua;
@@ -35,8 +35,8 @@ class Usuario {
         return $this->cpf;
     }
 
-    function getLogin() {
-        return $this->login;
+    function getIdentidade() {
+        return $this->identidade;
     }
 
     function getSenha() {
@@ -79,8 +79,8 @@ class Usuario {
         $this->cpf = $cpf;
     }
 
-    function setLogin($login) {
-        $this->login = $login;
+    function setIdentidade($identidade) {
+        $this->identidade = $identidade;
     }
 
     function setSenha($senha) {

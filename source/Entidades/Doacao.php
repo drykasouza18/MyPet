@@ -4,109 +4,158 @@ namespace MyPet\Entidades;
 
 class Doacao {
 
-    private $nome_mascote;
-    private $idade;
-    private $categoria;
-    private $vacinado;
-    private $vermifugado;
-    private $adocao_especial;
-    private $historia;
-    private $nome_doador;
-    private $email_doador;
-    private $telefone_doador;
-    private $imagem;
+private $nomeanimal;
+private $categoria;
+private $idade;
+private $sexo;
+private $raca;
+private $corpelagem;
+private $porte;
+private $castrado;
+private $vacinado;
+private $vermifugado;
+private $adocao_especial;
+private $historia;
+private $nomedoador;
+private $emaildoador;
+private $telefonedoador;
 
-    function __construct($nome_mascote, $idade, $categoria, $vacinado, $vermifugado, $adocao_especial, $historia, $nome_doador, $email_doador, $telefone_doador) {
-        $this->nome_mascote = $nome_mascote;
-        $this->idade = $idade;
-        $this->categoria = $categoria;
-        $this->vacinado = $vacinado;
-        $this->vermifugado = $vermifugado;
-        $this->adocao_especial = $adocao_especial;
-        $this->historia = $historia;
-        $this->nome_doador = $nome_doador;
-        $this->email_doador = $email_doador;
-        $this->telefone_doador = $telefone_doador;
-    }
+function __construct($nomeanimal, $categoria, $idade, $sexo, $raca, $corpelagem, $porte, $castrado, $vacinado, $vermifugado, $adocao_especial, $historia, $nomedoador, $emaildoador, $telefonedoador) {
+    $this->nomeanimal = $nomeanimal;
+    $this->categoria = $categoria;
+    $this->idade = $idade;
+    $this->sexo = $sexo;
+    $this->raca = $raca;
+    $this->corpelagem = $corpelagem;
+    $this->porte = $porte;
+    $this->castrado = $castrado;
+    $this->vacinado = $vacinado;
+    $this->vermifugado = $vermifugado;
+    $this->adocao_especial = $adocao_especial;
+    $this->historia = $historia;
+    $this->nomedoador = $nomedoador;
+    $this->emaildoador = $emaildoador;
+    $this->telefonedoador = $telefonedoador;
+}
+function getNomeanimal() {
+    return $this->nomeanimal;
+}
 
-    function getNome_mascote() {
-        return $this->nome_mascote;
-    }
+function getCategoria() {
+    return $this->categoria;
+}
 
-    function setNome_mascote($nome_mascote) {
-        $this->nome_mascote = $nome_mascote;
-    }
+function getIdade() {
+    return $this->idade;
+}
 
-    function getIdade() {
-        return $this->idade;
-    }
+function getSexo() {
+    return $this->sexo;
+}
 
-    function getCategoria() {
-        return $this->categoria;
-    }
+function getRaca() {
+    return $this->raca;
+}
 
-    function getVacinado() {
-        return $this->vacinado;
-    }
+function getCorpelagem() {
+    return $this->corpelagem;
+}
 
-    function getVermifugado() {
-        return $this->vermifugado;
-    }
+function getPorte() {
+    return $this->porte;
+}
 
-    function getAdocao_especial() {
-        return $this->adocao_especial;
-    }
+function getCastrado() {
+    return $this->castrado;
+}
 
-    function getHistoria() {
-        return $this->historia;
-    }
+function getVacinado() {
+    return $this->vacinado;
+}
 
-    function getNome_doador() {
-        return $this->nome_doador;
-    }
+function getVermifugado() {
+    return $this->vermifugado;
+}
 
-    function getEmail_doador() {
-        return $this->email_doador;
-    }
+function getAdocao_especial() {
+    return $this->adocao_especial;
+}
 
-    function getTelefone_doador() {
-        return $this->telefone_doador;
-    }
+function getHistoria() {
+    return $this->historia;
+}
 
-    function setIdade($idade) {
-        $this->idade = $idade;
-    }
+function getNomedoador() {
+    return $this->nomedoador;
+}
 
-    function setCategoria($categoria) {
-        $this->categoria = $categoria;
-    }
+function getEmaildoador() {
+    return $this->emaildoador;
+}
 
-    function setVacinado($vacinado) {
-        $this->vacinado = $vacinado;
-    }
+function getTelefonedoador() {
+    return $this->telefonedoador;
+}
 
-    function setVermifugado($vermifugado) {
-        $this->vermifugado = $vermifugado;
-    }
+function setNomeanimal($nomeanimal) {
+    $this->nomeanimal = $nomeanimal;
+}
 
-    function setAdocao_especial($adocao_especial) {
-        $this->adocao_especial = $adocao_especial;
-    }
+function setCategoria($categoria) {
+    $this->categoria = $categoria;
+}
 
-    function setHistoria($historia) {
-        $this->historia = $historia;
-    }
+function setIdade($idade) {
+    $this->idade = $idade;
+}
 
-    function setNome_doador($nome_doador) {
-        $this->nome_doador = $nome_doador;
-    }
+function setSexo($sexo) {
+    $this->sexo = $sexo;
+}
 
-    function setEmail_doador($email_doador) {
-        $this->email_doador = $email_doador;
-    }
+function setRaca($raca) {
+    $this->raca = $raca;
+}
 
-    function setTelefone_doador($telefone_doador) {
-        $this->telefone_doador = $telefone_doador;
-    }
+function setCorpelagem($corpelagem) {
+    $this->corpelagem = $corpelagem;
+}
+
+function setPorte($porte) {
+    $this->porte = $porte;
+}
+
+function setCastrado($castrado) {
+    $this->castrado = $castrado;
+}
+
+function setVacinado($vacinado) {
+    $this->vacinado = $vacinado;
+}
+
+function setVermifugado($vermifugado) {
+    $this->vermifugado = $vermifugado;
+}
+
+function setAdocao_especial($adocao_especial) {
+    $this->adocao_especial = $adocao_especial;
+}
+
+function setHistoria($historia) {
+    $this->historia = $historia;
+}
+
+function setNomedoador($nomedoador) {
+    $this->nomedoador = $nomedoador;
+}
+
+function setEmaildoador($emaildoador) {
+    $this->emaildoador = $emaildoador;
+}
+
+function setTelefonedoador($telefonedoador) {
+    $this->telefonedoador = $telefonedoador;
+}
+
 
 }

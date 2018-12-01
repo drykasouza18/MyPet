@@ -31,12 +31,12 @@
                 <div class="container">
                     <div class="intro-text">
                         {% for i in dados %}
-                            <a href="/detalhemascoteparaadotar/{{i.idDoacao}}" style="font-style: normal">                                         
+                            <a href="/detalhesminhadoacao/{{i.idDoacao}}" style="font-style: normal">                                         
                                 <div id="imagem">  
                                     <img src="imagens/{{i.idDoacao~".jpg"}}" 
                                          style="height: 200px; width: 200px;"/>
                                     Nome Mascote: {{i.nomeanimal}}
-                                    <button type="submit" class="btn btn-success" id="id">Adotar</button>
+                                    <button type="submit" class="btn btn-danger" id="id">Detalhes</button>
                                 </div>
                             </a>
                             <br/>

@@ -23,13 +23,12 @@ class ControllerCadastro {
         $this->sessao = $sessao;
     }
 
-
     public function InserirUsuario() {
         $nome = $this->request->get('nome');
         $cpf = $this->request->get('cpf');
-        $login = $this->request->get('login');
-        $senha = $this->request->get('senha');
+        $identidade = $this->request->get('identidade');
         $email = $this->request->get('email');
+        $senha = $this->request->get('senha');
         $rua = $this->request->get('rua');
         $numero = $this->request->get('numero');
         $bairro = $this->request->get('bairro');
@@ -41,13 +40,12 @@ class ControllerCadastro {
             echo 'Nome está vazio!';
             return;
         }
-
         if (empty($cpf)) {
             echo'C.P.F. está vazio!';
             return;
         }
-        if (empty($login)) {
-            echo'Mensagem está vazio!';
+        if (empty($identidade)) {
+            echo'Identidade está vazio!';
             return;
         }
         if (empty($senha)) {
@@ -82,12 +80,28 @@ class ControllerCadastro {
             echo 'Estado está vazio!';
             return;
         }
-        $usuario = new Usuario($nome, $cpf, $login, $senha, $email, $rua, $numero, $bairro, $cep, $cidade, $estado);
+
+        $usuario = new Usuario($nome, $cpf, $identidade, $senha, $email, $rua,
+                $numero, $bairro, $cep, $cidade, $estado);
         $modeloUsuario = new ModeloUsuario();
-        if ($id = $modeloUsuario->cadastrarUsuario($usuario)) {
-            echo 'Cadastro efetuado com sucesso. Código: ' . $id;
+        $quantidade = $modeloUsuario->buscaEmail($email);
+ 
+        if ($quantidade >= 1) {
+            echo 'E-mail já cadastrado no sistema.';
+            $quantidade = 0;
         } else {
-            echo 'Falha ao cadastrar!';
+            
+            $quantidade = $modeloUsuario->buscaCPF($cpf);
+            if ($quantidade >=1){
+                echo 'C.P.F. já cadastrado no sistema.';
+            }else{
+                if ($id = $modeloUsuario->cadastrarUsuario($usuario)) {
+                echo 'Cadastro efetuado com sucesso. Código: ' . $id;
+            } else {
+                echo 'Falha ao cadastrar!';
+            }
+            }
+            
         }
     }
 

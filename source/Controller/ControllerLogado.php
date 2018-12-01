@@ -43,11 +43,39 @@ class ControllerLogado {
     }
     public function showPaginaDoar() {
         if ($this->sessao->existe('E-mail')) {
-            return $this->response->setContent($this->twig->render('formularioparadoar.twig'));
+            return $this->response->setContent($this->twig->render('inserirdoacao.twig'));
         } else {
             $destino = '/formlogin';
             $redirecionar = new RedirectResponse($destino);
             $redirecionar->send();
         }
     }
+     public function showSucessoDeletarDoacao() {
+        if ($this->sessao->existe('E-mail')) {
+            return $this->response->setContent($this->twig->render('sucessoaodeletar.twig'));
+        } else {
+            $destino = '/formlogin';
+            $redirecionar = new RedirectResponse($destino);
+            $redirecionar->send();
+        }
+    }
+    public function showErroaoDeletarDocao() {
+        if ($this->sessao->existe('E-mail')) {
+            return $this->response->setContent($this->twig->render('erroaodeletar.twig'));
+        } else {
+            $destino = '/formlogin';
+            $redirecionar = new RedirectResponse($destino);
+            $redirecionar->send();
+        }
+    }
+    public function showPaginaFormularioAdotar() {
+        if ($this->sessao->existe('E-mail')) {
+            return $this->response->setContent($this->twig->render('formularioparadotar.twig'));
+        } else {
+            $destino = '/formlogin';
+            $redirecionar = new RedirectResponse($destino);
+            $redirecionar->send();
+        }
+    }
+   
 }
