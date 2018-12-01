@@ -166,8 +166,18 @@ class ControllerDoacao {
         }
     }
 
-    public function gerarPdfDoacao() {
-        
+    public function mostrarFormDadosDoacao() {
+        if ($this->sessao->existe('E-mail')) {
+            $modelomascote = new ModeloDoacao();
+            $id = $this->request->get('idDoacao');
+            $dadosMascote = $modelomascote->listaDetalheMascote($id);
+            return $this->response->setContent($this->twig->render('formDadosDoacao.twig', ['dadosMascote' => $dadosMascote]));
+        } else {
+            $destino = '/formlogin';
+            $redirecionar = new RedirectResponse($destino);
+            $redirecionar->send();
+        }
+
     }
 
 }

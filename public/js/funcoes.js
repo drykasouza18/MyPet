@@ -179,7 +179,7 @@ function deletarDoacao(id) {
             type: 'POST',
             url: '/deletarDoacao',
             data: {idDoacao: id},
-            success: function (dados) {
+            success: function () {
                location.href = "http://www.mypet.org/deletarSucesso"
             },
             beforeSend: function () {
@@ -202,12 +202,15 @@ function deletarDoacao(id) {
 
 
 function adotar(id) {
-          $.ajax({
+          var r = confirm("Desejar realmente continuar essa adoação? ");
+    if (r == true) {
+
+        $.ajax({
             type: 'POST',
-            url: '/gerarPdfDoacao',
+            url: '/mostrarFormDadosDoacao',
             data: {idDoacao: id},
-            success: function (dados) {
-               $("#div_retorno").html(dados);
+            success: function (id) {
+                $("#div_retorno").html(id);
             },
             beforeSend: function () {
                 $("#processando").css({display: "block"});
@@ -222,5 +225,8 @@ function adotar(id) {
                 }, 5000);
             }
         });
+    } else {
+        location.href = "http://www.mypet.org/erroAdotar"
+    }
     
 }

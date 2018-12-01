@@ -91,9 +91,9 @@ $rotas->add('detalhemascoteparaadotar', new Route('/detalhemascoteparaadotar/{su
 
 // ADOTAR
 
-$rotas->add('adotar', new Route('/gerarPdfDoacao/{suffix}',
+$rotas->add('adotar', new Route('/mostrarFormDadosDoacao',
         array('_controller' => 'MyPet\Controller\ControllerDoacao',
-            "method" => 'gerarPdfDoacao', 'suffix' => '')));
+            "method" => 'mostrarFormDadosDoacao', 'suffix' => '')));
 
 // ROTA PARA DESLOGAR NO SISTEMA
 $rotas->add('logout', new Route('/logout',
