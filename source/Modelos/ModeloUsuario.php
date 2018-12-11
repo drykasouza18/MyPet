@@ -39,6 +39,18 @@ class ModeloUsuario {
         }
     }
 
+    public function buscaUsuario($id) {
+        try {
+            $idUser = $id[0];
+            $sql = 'select * from usuario where (idUsuario = :id)';
+            $p_sql = Conexao::getInstancia()->prepare($sql);
+            $p_sql->bindValue(':idUsuairo', $idUser);
+            return $p_sql->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $ex) {
+            
+        }
+    }
+
     public function verificarLogin($email, $senha) {
         try {
             $sql = 'select * from usuario '
@@ -110,5 +122,4 @@ class ModeloUsuario {
         }
     }
 
-    
 }

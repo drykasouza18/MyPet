@@ -31,23 +31,22 @@
                 <div class="container">
 
                     <div class="intro-text" id="formDetalhesAdocao">
-                        
+                        <p> Dados do Animal</p>
                         {% for i in dadosMascote %}
-                           
-                            Código do Animal: {{i.idDoacao}}<br/> 
-                            Nome do Animal: {{i.nomeanimal}} <br/>
+
+                            Nome Mascote: {{i.nomeanimal}} <br/>
                             Idade: {{i.idade}} <br/>
                             Categoria: {{i.categoria}} <br/>
                             Vacinado: {{i.vacinado}} <br/>
                             Vermifugado: {{i.vermifugado}} <br/>
                             Adoção Especial: {{ i.adocao_especial }} <br/>
                             História: {{ i.historia}}<br/>
+                          
+                            <button type="submit" class="btn btn-success" id="id" 
+                                    onclick="adotar({{i.idDoacao}});">Quero Adotar!!</button>
+                       
 
-                            <button type="submit" class="btn btn-danger" id="id"
-                                    >Continuar</button>
-
-
-                        {% endfor %} 
+                    {% endfor %} 
 
                     </div>
 

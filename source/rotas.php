@@ -91,7 +91,7 @@ $rotas->add('detalhemascoteparaadotar', new Route('/detalhemascoteparaadotar/{su
 
 // ADOTAR
 
-$rotas->add('adotar', new Route('/mostrarFormDadosDoacao',
+$rotas->add('adotar', new Route('/mostrarInformacao',
         array('_controller' => 'MyPet\Controller\ControllerDoacao',
             "method" => 'mostrarFormDadosDoacao', 'suffix' => '')));
 

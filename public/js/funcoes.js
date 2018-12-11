@@ -180,7 +180,7 @@ function deletarDoacao(id) {
             url: '/deletarDoacao',
             data: {idDoacao: id},
             success: function () {
-               location.href = "http://www.mypet.org/deletarSucesso"
+                location.href = "http://www.mypet.org/deletarSucesso"
             },
             beforeSend: function () {
                 $("#processando").css({display: "block"});
@@ -202,15 +202,15 @@ function deletarDoacao(id) {
 
 
 function adotar(id) {
-          var r = confirm("Desejar realmente continuar essa adoação? ");
+    var r = confirm("Desejar realmente deletar essa doação? ");
     if (r == true) {
 
         $.ajax({
             type: 'POST',
-            url: '/mostrarFormDadosDoacao',
+            url: '/mostrarInformacao',
             data: {idDoacao: id},
-            success: function (id) {
-                $("#div_retorno").html(id);
+            success: function () {
+                location.href = "http://www.mypet.org/mostrarInformacao"
             },
             beforeSend: function () {
                 $("#processando").css({display: "block"});
@@ -226,7 +226,7 @@ function adotar(id) {
             }
         });
     } else {
-        location.href = "http://www.mypet.org/erroAdotar"
+        location.href = "http://www.mypet.org/deletarErro"
     }
-    
+
 }

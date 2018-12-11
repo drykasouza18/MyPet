@@ -167,17 +167,22 @@ class ControllerDoacao {
     }
 
     public function mostrarFormDadosDoacao() {
+
         if ($this->sessao->existe('E-mail')) {
+            // BUSCAR INFORMAÇÔES DO ANIMAL
             $modelomascote = new ModeloDoacao();
-            $id = $this->request->get('idDoacao');
-            $dadosMascote = $modelomascote->listaDetalheMascote($id);
-            return $this->response->setContent($this->twig->render('formDadosDoacao.twig', ['dadosMascote' => $dadosMascote]));
+            $idDoacao = $this->request->get('idDoacao');
+            $dadosMascote = $modelomascote->listaDetalheMascote($idDoacao);
+            //BUSCAR INFORMAÇÔES DO USUARIO
+            $modeloUsuario = new ModeloUsuario();
+            $idUsuario = $modeloUsuario->buscaIDListagem($this->sessao->get('E-mail'));
+            $dadosUsuario = $modeloUsuario->buscaUsuario($idUsuario);
+            return $this->response->setContent($this->twig->render('formDadosDoacao.twig', ['dadosMascote' => $dadosMascote], ['dadosUsuario' => $dadosUsuario]));
         } else {
             $destino = '/formlogin';
             $redirecionar = new RedirectResponse($destino);
             $redirecionar->send();
         }
-
     }
 
 }
